@@ -107,7 +107,7 @@ def Game():
                 game_close = True
  
         snake(snake_unite, snake_List)
-        Score(longueur_du_snaket - 1)
+        Score(longueur_du_snake - 1)
  
         pygame.display.update()
  
