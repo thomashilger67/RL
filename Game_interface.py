@@ -11,11 +11,11 @@ red = (213, 50, 80)
 green = (0, 255, 0)
 blue = (50, 153, 213)
  
-longueur = 600
+longueur = 800
 hauteur = 400
  
-dis = pygame.display.set_mode((longueur, hauteur))
-pygame.display.set_caption('Snake for Q-learning ')
+dis = pygame.display.set_mode((longueur, hauteur)) 
+pygame.display.set_caption('Snake for Q-learning')
  
 clock = pygame.time.Clock()
  
@@ -25,7 +25,7 @@ snake_vitesse = 10
 font = pygame.font.SysFont("bahnschrift", 25)
  
 def Score(score):
-    value = font.render("score: " + str(score), True, black)
+    value = font.render("score : " + str(score), True, black)
     dis.blit(value, [0, 0])
  
  
@@ -60,8 +60,8 @@ def Game():
  
         while game_close == True:
             dis.fill(white)
-            message("Partie perdu! Pour quitter ctrl q ou rejouer ctrl c ", black)
-            Score(longueur_du_serpent - 1)
+            message("Partie perdue ! Pour quitter ctrl q ou rejouer ctrl c", black)
+            Score(longueur_du_snake - 1)
             pygame.display.update()
  
             for event in pygame.event.get():
@@ -114,7 +114,7 @@ def Game():
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(0, longueur - snake_unite) / 10.0) * 10.0
             foody = round(random.randrange(0, hauteur - snake_unite) / 10.0) * 10.0
-            Length_of_snake += 1
+            longueur_du_snake += 1
  
         clock.tick(snake_vitesse)
  
