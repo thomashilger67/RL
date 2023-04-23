@@ -1,6 +1,6 @@
 # RL
 
-## Markov Decision Process
+### Markov Decision Process
 * State : positions du snake et de la nourriture sur l'écran
 * Action : déplacer le snake à gauche, à droite, en haut ou en bas
 * Reward :  
@@ -10,6 +10,6 @@
 1 si le snake mange  
 
 ### Stratégie $\epsilon$-greedy pour l'entrainement  
-Combiner exploitation (avec probabilité 1-$\epsilon$) et exploration (avec probabilité $\epsilon$)  
+Combiner exploitation (avec probabilité 1- $\epsilon$) et exploration (avec probabilité $\epsilon$)  
 Entrainement sur 100 jeux avec $\epsilon$ = 0.1  
 Puis exploitation de l'entrainement sur les jeux suivants ($\epsilon$ = 0)  
