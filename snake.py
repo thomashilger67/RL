@@ -19,8 +19,6 @@ snake_vitesse = 50000
 
 font = pygame.font.SysFont("bahnschrift", 25)
 
-qvalues_n = 100
-
 
 def food(foodx, foody):
     pygame.draw.rect(dis, red, [foodx, foody, snake_unite, snake_unite])   
@@ -53,8 +51,8 @@ def Game():
     foodx = round(random.randrange(0, longueur - snake_unite) / 10.0) * 10.0
     foody = round(random.randrange(0, hauteur - snake_unite) / 10.0) * 10.0
 
-    dead = False
-    while not dead:
+    game_over = False
+    while not game_over:
         # Récupère l'action du learner
         action = learner.act(snake_list, (foodx,foody))
         if action == "left":
@@ -78,11 +76,11 @@ def Game():
 
         # Vérifie si le snake est en dehors de l'écran
         if x1 >= longueur or x1 < 0 or y1 >= hauteur or y1 < 0:
-            dead = True
+            game_over = True
 
         # Vérifie si le snake se mord la queue
         if snake_head in snake_list[:-1]:
-            dead = True
+            game_over = True
 
         # Vérifie si le snake mange la nourriture
         if x1 == foodx and y1 == foody:
@@ -104,7 +102,7 @@ def Game():
         pygame.display.update()
 
         # Met à jour la Q-Table
-        learner.UpdateQValues(dead)
+        learner.UpdateQValues(game_over)
         
         clock.tick(snake_vitesse)
 
@@ -113,17 +111,18 @@ def Game():
 
 
 game_count = 1
+qvalues_n = 100
 
 learner = Learner.Learner(longueur, hauteur, snake_unite)
 
 while True:
     learner.Reset()
-    if game_count > 100:
+    if game_count >= 100:
         learner.epsilon = 0
     else:
         learner.epsilon = .1
     score = Game()
-    print(f"Games: {game_count}; Score: {score}") # Résultats de chaque jeu pendant la phase d'entrainement
+    print(f"Games: {game_count}; Score: {score}") # Résultats de chaque jeu
     game_count += 1
     if game_count % qvalues_n == 0: # Enregistre les qvalues
         print("Save Qvals")
