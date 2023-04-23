@@ -7,8 +7,8 @@ import dataclasses
 class GameState:
     distance: tuple # distances horizontale et verticale entre le snake et la nourriture
     position: tuple # positions horizontale et verticale de la nourriture par rapport au snake
-    surroundings: str
-    food: tuple
+    surroundings: str # obstacles autour de la tête du snake (limites de l'écran ou queue du snake)
+    food: tuple # position de la nourriture
 
 
 class Learner(object):
