@@ -8,8 +8,8 @@
 * State : position horizontale et verticale de la pomme par rapport au serpent, obstacles autour de la tête du serpent (frontières ou queue du serpent)  
 * Action : déplacer le serpent à gauche, à droite, en haut ou en bas
 * Reward :  
-          -1 si le serpent a perdu (le serpent est en dehors de la grille de jeu ou s'est mordu la queue)   
-          +1 si le serpent mange la pomme  
+-1 si le serpent a perdu (le serpent est en dehors de la grille de jeu ou s'est mordu la queue)   
++1 si le serpent mange la pomme  
 
 ### Stratégie $\epsilon$-greedy pour l'entrainement  
 Combiner exploration (avec probabilité $\epsilon$) et exploitation (avec probabilité 1- $\epsilon$)  
