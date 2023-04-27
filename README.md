@@ -2,7 +2,7 @@
 
 ### Contexte
 * Agent : serpent  
-* Action : Frontières (bords de la grille) et queue du serpent
+* Système : Grille dans laquelle évolue le serpent
 
 ### Markov Decision Process
 * State : position horizontale et verticale de la pomme par rapport au serpent, obstacles autour de la tête du serpent (frontières ou queue du serpent)  
