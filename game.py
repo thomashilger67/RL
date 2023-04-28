@@ -6,7 +6,7 @@ import numpy as np
 from Qlearner import QLearn
 
 
-##paramètres du d'affichage du jeu 
+# Paramètres d'affichage du jeu 
 window_width = 640
 window_height = 480
 grid_size = 40
@@ -18,7 +18,8 @@ red = (255, 0, 0)
 grid_width = int(window_width / grid_size)
 grid_height = int(window_height / grid_size)
 
-##directions
+
+# Directions
 UP = (0, -1)
 DOWN = (0, 1)
 LEFT = (-1, 0)
@@ -33,8 +34,6 @@ surface = pygame.Surface(window.get_size())
 surface = surface.convert()
 surface.fill(white)
 clock = pygame.time.Clock()
-
-# Calcul de la taille de la grille
 
 
 # Création du serpent et de la pomme

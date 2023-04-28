@@ -4,10 +4,10 @@ class Apple:
     '''
     Objet pomme qui est la nourriture du serpent
 
-    Attribtut
+    Attributs
     ------------
-    position= position de la pomme
-    color= couleur de la pomme RGB
+    position: position de la pomme
+    color: couleur de la pomme RGB
 
     '''
     def __init__(self,color,grid_size,window_height,window_width):
@@ -17,10 +17,10 @@ class Apple:
 
     def randomize_position(self,grid_size,window_height,window_width):
         '''Position aléatoire de la pomme
+
         Parameter
         --------
         grid_size: taille de la grille de jeu 
-        
         '''
         grid_width = int(window_width / grid_size)
         grid_height = int(window_height / grid_size)

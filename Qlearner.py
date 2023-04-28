@@ -14,7 +14,7 @@ class QLearn:
     Parameters
     ------------
     grid_size: taille de la grille
-    q_table= historique des états
+    q_table: historique des états
     epsilon
     alpha
     gamma
@@ -29,12 +29,12 @@ class QLearn:
 
     def get_state(self, snake, apple,window_height,window_width):
         '''
-        Récupère l'état actuelle du jeu
+        Récupère l'état actuel du jeu
 
         Parameters
         ------------
-        snake : serpent
-        apple : pomme à manger
+        snake: serpent
+        apple: pomme à manger
         '''
         head_x, head_y = snake.get_head_position()
         diff_x = apple.position[0] - head_x
@@ -60,7 +60,7 @@ class QLearn:
         for sq in arround:
             if sq[0] <= 0 or sq[1] <= 0: # frontière à gauche ou en haut
                 autour_list.append('1')
-            elif sq[0] >= window_width or sq[1] >= window_height: #frontière à droite ou en bas
+            elif sq[0] >= window_width or sq[1] >= window_height: # frontière à droite ou en bas
                 autour_list.append('1')
             elif sq in snake.positions[2:]: # s'est mordu la queue
                 autour_list.append('1')

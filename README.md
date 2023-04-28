@@ -2,7 +2,7 @@
 
 ### Contexte
 * Agent : serpent  
-* Système : Grille dans laquelle évolue le serpent
+* Système : grille dans laquelle évolue le serpent
 
 ### Markov Decision Process
 * State : position horizontale et verticale de la pomme par rapport au serpent, obstacles autour de la tête du serpent (frontières ou queue du serpent)  
@@ -13,7 +13,11 @@
 
 ### Stratégie $\epsilon$-greedy pour l'entrainement  
 Combiner exploration (avec probabilité $\epsilon$) et exploitation (avec probabilité 1- $\epsilon$)  
-Entrainement sur 40 jeux avec $\epsilon$ = 0.8  
+Entrainement :  
+Sur 40 jeux avec $\epsilon$ = 0.8  
 Puis sur 40 jeux avec $\epsilon$ = 0.7  
 Puis sur 40 jeux avec $\epsilon$ = 0.1  
-Puis pour les jeux suivants avec $\epsilon$ = 0.01
+Puis sur les jeux suivants avec $\epsilon$ = 0.01
+
+### Start
+Pour lancer l'entrainement et la visualisation : exécuter game.py

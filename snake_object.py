@@ -14,8 +14,8 @@ class Snake:
     Parameters
     -------------
     color: couleur du serpent RGB
-    window_width: longueur de la fnêttre de jeu
-    window_height: hauteur de la fnêttre de jeu
+    window_width: longueur de la fenêtre de jeu
+    window_height: hauteur de la fenêtre de jeu
 
     Attributs
     ----------------
@@ -23,8 +23,8 @@ class Snake:
     positions: positions du serpent 
     color: couleur du serpent 
     lost: si le serpent a perdu 
-    
     '''
+
     def __init__(self,color,grid_size,window_width=640,window_height=480):
         self.length = 1
         self.positions = [((window_width / 2), (window_height / 2))]
@@ -38,18 +38,18 @@ class Snake:
 
     def get_head_position(self):
         '''
-        renvoie la position de la tête du serpent 
+        Renvoie la position de la tête du serpent 
         '''
         return self.positions[0]
 
+
     def turn(self, point):
         '''
-        change la direction du serpent 
+        Change la direction du serpent 
 
         Parameter 
         -----------
-        point : directions (UP, DOWN, RIGHT, LEFT)
-        
+        point: directions (UP, DOWN, RIGHT, LEFT)
         '''
 
         if self.length > 1 and (point[0] * -1, point[1] * -1) == self.direction:
@@ -57,11 +57,12 @@ class Snake:
         else:
             self.direction = point
 
+
     def move(self):
         '''
-        Faire avancer le serpent 
+        Fait avancer le serpent 
         '''
-        
+    
         cur = self.get_head_position()
 
         x, y = self.direction
@@ -76,17 +77,19 @@ class Snake:
             if len(self.positions) > self.length:
                 self.positions.pop()
 
+
     def reset(self):
         '''
-        remise à zéro du serpent au centre de plateau 
+        Remise à zéro du serpent au centre du plateau 
         '''
         self.length = 1
         self.positions = [((self.window_width / 2), (self.window_height / 2))]
         self.direction = random.choice([UP, DOWN, LEFT, RIGHT])
         self.lost=False
 
+
     def draw(self, surface):
-        '''Dessiner le serpent sur le plateau
+        '''Dessine le serpent sur le plateau
         
         Parameter
         ---------
